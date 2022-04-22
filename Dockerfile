@@ -1,5 +1,5 @@
 FROM maven:3.8.5-jdk-11 as builder
-COPY *  /app
+COPY .  /app
 WORKDIR /app
 RUN mvn install
 FROM openjdk:11
