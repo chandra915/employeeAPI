@@ -22,6 +22,11 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
+	@GetMapping("/test")
+	public String test() {
+		return "Sucess";
+	}
+
 	@PostMapping("/employee")
 	public Employee addEmployee(@RequestBody Employee employee) {
 		return employeeService.addEmployee(employee);
