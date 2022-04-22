@@ -3,6 +3,7 @@ COPY .  /app
 WORKDIR /app
 RUN mvn install
 FROM openjdk:11
+RUN mkdir /employee
 COPY --from=builder /app/target/*.jar  /employee
 WORKDIR /employee
 CMD ["java","-jar","*.jar"]
